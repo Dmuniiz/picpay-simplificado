@@ -4,6 +4,8 @@ public enum UserType {
 
     COMMON,
 
-    MERCHANT
+    MERCHANT,
+
+    ADMIN
 
 }
