@@ -55,8 +55,10 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         if(this.userType == UserType.ADMIN){
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }else if(this.userType == UserType.MERCHANT){
+            return List.of(new SimpleGrantedAuthority("ROLE_MERCHANT"));
         }else{
-            return List.of(new SimpleGrantedAuthority("ROLE_COMMON"), new SimpleGrantedAuthority("ROLE_MERCHANT"));
+            return List.of(new SimpleGrantedAuthority("ROLE_COMMON"));
         }
     }
 
